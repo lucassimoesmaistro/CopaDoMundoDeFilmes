@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="ObjetosDeValor\" />
     <Folder Include="Servicos\" />
   </ItemGroup>
