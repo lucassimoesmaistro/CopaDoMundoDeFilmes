@@ -2,6 +2,7 @@
 using CopaDoMundoDeFilmes.Core.Dominio.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
@@ -25,7 +26,13 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
 
         public List<Jogo> MontarJogos(int quantidadeDeJogos, List<Filme> listaDeFilmes)
         {
-            throw new NotImplementedException();
+            List<Jogo> jogos = new List<Jogo>();
+            var listaOrdenada = listaDeFilmes.OrderBy(o => o.Titulo);
+            for (int jogo=0; jogo <= quantidadeDeJogos-1; jogo++)
+            {
+                jogos.Add(new Jogo { Numero = jogo, Filme1 = listaOrdenada.ElementAt(jogo), Filme2 = listaOrdenada.ElementAt(listaOrdenada.Count() - 1 - jogo) });
+            }
+            return jogos;
         }
     }
 }

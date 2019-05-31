@@ -11,17 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{C95ACF1C-74C2-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E03D509E-CC02-4B78-B391-ABC282CC0F49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaDoMundoDeFilmes.Core.Dominio", "CopaDoMundoDeFilmes.Core.Dominio\CopaDoMundoDeFilmes.Core.Dominio.csproj", "{E78E78DA-50E3-499A-B940-B2619B5EC0D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.Core.Dominio", "CopaDoMundoDeFilmes.Core.Dominio\CopaDoMundoDeFilmes.Core.Dominio.csproj", "{E78E78DA-50E3-499A-B940-B2619B5EC0D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaDoMundoDeFilmes.Core.Aplicacao", "CopaDoMundoDeFilmes.Core.Aplicacao\CopaDoMundoDeFilmes.Core.Aplicacao.csproj", "{F8EDB012-E0D6-4853-B3F1-5A8E127BA7FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.Core.Api", "CopaDoMundoDeFilmes.Core.Api\CopaDoMundoDeFilmes.Core.Api.csproj", "{99E2821D-6899-4B5D-B57F-5209FEDCD196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaDoMundoDeFilmes.Core.Api", "CopaDoMundoDeFilmes.Core.Api\CopaDoMundoDeFilmes.Core.Api.csproj", "{99E2821D-6899-4B5D-B57F-5209FEDCD196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.Core.ServicoApp", "CopaDoMundoDeFilmes.Core.ServicoApp\CopaDoMundoDeFilmes.Core.ServicoApp.csproj", "{44EDBDE3-CDDF-4BDA-B6F4-6AE740CE376C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaDoMundoDeFilmes.Core.ServicoApp", "CopaDoMundoDeFilmes.Core.ServicoApp\CopaDoMundoDeFilmes.Core.ServicoApp.csproj", "{44EDBDE3-CDDF-4BDA-B6F4-6AE740CE376C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.Testes", "CopaDoMundoDeFilmes.Testes\CopaDoMundoDeFilmes.Testes.csproj", "{1D713E9E-1DB5-4286-A032-332058E95E80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaDoMundoDeFilmes.Testes", "CopaDoMundoDeFilmes.Testes\CopaDoMundoDeFilmes.Testes.csproj", "{1D713E9E-1DB5-4286-A032-332058E95E80}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaDoMundoDeFilmes.CrossCutting.IoC", "CopaDoMundoDeFilmes.CrossCutting.IoC\CopaDoMundoDeFilmes.CrossCutting.IoC.csproj", "{FF03A7E3-4BDA-4A85-A881-4883325CEE97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.CrossCutting.IoC", "CopaDoMundoDeFilmes.CrossCutting.IoC\CopaDoMundoDeFilmes.CrossCutting.IoC.csproj", "{FF03A7E3-4BDA-4A85-A881-4883325CEE97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{E78E78DA-50E3-499A-B940-B2619B5EC0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E78E78DA-50E3-499A-B940-B2619B5EC0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E78E78DA-50E3-499A-B940-B2619B5EC0D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8EDB012-E0D6-4853-B3F1-5A8E127BA7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8EDB012-E0D6-4853-B3F1-5A8E127BA7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8EDB012-E0D6-4853-B3F1-5A8E127BA7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8EDB012-E0D6-4853-B3F1-5A8E127BA7FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99E2821D-6899-4B5D-B57F-5209FEDCD196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99E2821D-6899-4B5D-B57F-5209FEDCD196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99E2821D-6899-4B5D-B57F-5209FEDCD196}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,7 +53,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E78E78DA-50E3-499A-B940-B2619B5EC0D7} = {D28F95A1-CEC3-49C5-9B49-05091555F804}
-		{F8EDB012-E0D6-4853-B3F1-5A8E127BA7FC} = {D28F95A1-CEC3-49C5-9B49-05091555F804}
 		{99E2821D-6899-4B5D-B57F-5209FEDCD196} = {D28F95A1-CEC3-49C5-9B49-05091555F804}
 		{44EDBDE3-CDDF-4BDA-B6F4-6AE740CE376C} = {D28F95A1-CEC3-49C5-9B49-05091555F804}
 		{1D713E9E-1DB5-4286-A032-332058E95E80} = {E03D509E-CC02-4B78-B391-ABC282CC0F49}
