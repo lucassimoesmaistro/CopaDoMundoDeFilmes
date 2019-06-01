@@ -1,5 +1,5 @@
 using CopaDoMundoDeFilmes.Core.Dominio.Servicos;
-using CopaDoMundoDeFilmes.Core.ServicoApp.Servicos;
+using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Servicos;
 using System;
 using System.Linq;
 using Xunit;

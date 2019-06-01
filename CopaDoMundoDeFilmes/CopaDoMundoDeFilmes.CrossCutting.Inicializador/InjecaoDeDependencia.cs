@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CopaDoMundoDeFilmes.CrossCutting.IoC
+namespace CopaDoMundoDeFilmes.CrossCutting.Inicializador
 {
     public class InjecaoDeDependencia
     {

@@ -1,4 +1,4 @@
-using CopaDoMundoDeFilmes.Core.ServicoApp.Servicos;
+using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Servicos;
 using System;
 using Xunit;
 

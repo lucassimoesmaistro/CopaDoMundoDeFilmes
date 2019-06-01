@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CopaDoMundoDeFilmes.Core.ServicoApp.Interfaces
+namespace CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Interfaces
 {
     public interface ICopaDeFilmes
     {
