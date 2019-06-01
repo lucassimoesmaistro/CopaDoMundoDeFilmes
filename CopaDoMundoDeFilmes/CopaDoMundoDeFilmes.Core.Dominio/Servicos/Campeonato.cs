@@ -10,19 +10,16 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
 {
     public class Campeonato : ICampeonato
     {
-        //private readonly ICopaDeFilmes _servicoCopaDeFilmes;
-        //public Campeonato(ICopaDeFilmes servicoCopaDeFilmes)
-        //{
-        //    _servicoCopaDeFilmes = servicoCopaDeFilmes;
-        //}
         public ResultadoFinal GerarCampeonato(List<Filme> filmesSelecionados)
         {
-            return new ResultadoFinal();
-        }
+            var filmesEmDisputa = filmesSelecionados;
+            for(int qtdeJogos=filmesSelecionados.Count/2; qtdeJogos>=2 ; qtdeJogos-= qtdeJogos/2)
+            {
+                var jogos = MontarJogos(qtdeJogos, filmesEmDisputa);
 
-        public List<Filme> ObterFilmes()
-        {
-            throw new NotImplementedException();
+                filmesEmDisputa = RealizarFaseDejogos(jogos);
+            }
+            return ObterResultadoDaCompeticao(filmesEmDisputa);
         }
 
         public Filme DefinirVencedor(Filme filme1, Filme filme2)

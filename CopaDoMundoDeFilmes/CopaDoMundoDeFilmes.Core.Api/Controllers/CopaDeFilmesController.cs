@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CopaDoMundoDeFilmes.Core.Dominio.Interfaces;
 using CopaDoMundoDeFilmes.Core.Dominio.Modelos;
+using CopaDoMundoDeFilmes.Core.Dominio.ObjetosDeValor;
+using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,33 +16,23 @@ namespace CopaDoMundoDeFilmes.Core.Api.Controllers
     public class CopaDeFilmesController : ControllerBase
     {
         private readonly ICampeonato _campeonato;
-        public CopaDeFilmesController(ICampeonato campeonato)
+        private readonly ICopaDeFilmes _servicoCopaDeFilmes;
+        public CopaDeFilmesController(ICampeonato campeonato, ICopaDeFilmes servicoCopaDeFilmes)
         {
             _campeonato = campeonato;
+            _servicoCopaDeFilmes = servicoCopaDeFilmes;
         }
 
         [HttpGet("obterFilmes")]
         public IEnumerable<Filme> Get()
         {
-            return _campeonato.ObterFilmes();
+            return _servicoCopaDeFilmes.ObterFilmes();
         }
 
-        // POST: api/CopaDeFilmes
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("gerar")]
+        public ResultadoFinal Post([FromBody] IEnumerable<Filme> filmesSelecionados)
         {
-        }
-
-        // PUT: api/CopaDeFilmes/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return _campeonato.GerarCampeonato(filmesSelecionados.ToList());
         }
     }
 }

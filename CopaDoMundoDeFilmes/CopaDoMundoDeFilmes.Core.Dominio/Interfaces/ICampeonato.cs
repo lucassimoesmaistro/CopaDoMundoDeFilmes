@@ -10,8 +10,6 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Interfaces
     {
         ResultadoFinal GerarCampeonato(List<Filme> filmesSelecionados);
 
-        List<Filme> ObterFilmes();
-
         Filme DefinirVencedor(Filme filme1, Filme filme2);
 
         List<Jogo> MontarJogos(int quantidadeDeJogos, List<Filme> listaDeFilmes);

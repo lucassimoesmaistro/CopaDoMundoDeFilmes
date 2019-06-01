@@ -23,7 +23,7 @@ namespace CopaDoMundoDeFilmes.Core.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "APIeMDSelectionProcess", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "APICopaDeFilmes", Version = "v1" });
             });
 
             RegistrarServicos(services);
@@ -36,6 +36,13 @@ namespace CopaDoMundoDeFilmes.Core.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "APICopaDeFilmes");
+            });
 
             app.UseMvc();
         }

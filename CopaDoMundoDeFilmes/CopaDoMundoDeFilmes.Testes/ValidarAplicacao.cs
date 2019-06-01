@@ -73,7 +73,6 @@ namespace CopaDoMundoDeFilmes.Testes
                 var listaDeOitoFilmes = servico.ObterFilmes().GetRange(0, 8);
                 Campeonato campeonato = new Campeonato();
                 var jogos = campeonato.MontarJogos(4, listaDeOitoFilmes);
-                var listaOrdenada = listaDeOitoFilmes.OrderBy(o => o.Titulo).ToList();
                 var vencedores = campeonato.RealizarFaseDejogos(jogos);
                 Assert.Equal(4, vencedores.Count);
                 Assert.Equal(campeonato.DefinirVencedor(jogos[0].Filme1, jogos[0].Filme2).Id, vencedores[0].Id);
@@ -89,7 +88,6 @@ namespace CopaDoMundoDeFilmes.Testes
                 var listaDeOitoFilmes = servico.ObterFilmes().GetRange(0, 8);
                 Campeonato campeonato = new Campeonato();
                 var jogos = campeonato.MontarJogos(4, listaDeOitoFilmes);
-                var listaOrdenada = listaDeOitoFilmes.OrderBy(o => o.Titulo).ToList();
                 var vencedores = campeonato.RealizarFaseDejogos(jogos);
 
                 var jogosSemiFinal = campeonato.MontarJogos(2, vencedores);
@@ -109,7 +107,6 @@ namespace CopaDoMundoDeFilmes.Testes
                 var listaDeOitoFilmes = servico.ObterFilmes().GetRange(0, 8);
                 Campeonato campeonato = new Campeonato();
                 var jogos = campeonato.MontarJogos(4, listaDeOitoFilmes);
-                var listaOrdenada = listaDeOitoFilmes.OrderBy(o => o.Titulo).ToList();
                 var vencedores = campeonato.RealizarFaseDejogos(jogos);
 
                 var jogosSemiFinal = campeonato.MontarJogos(2, vencedores);
@@ -120,6 +117,30 @@ namespace CopaDoMundoDeFilmes.Testes
 
                 Assert.Equal(campeonato.DefinirVencedor(vencedoresSemiFinal[0], vencedoresSemiFinal[1]).Id, resultadoDaCompeticao.Campeao.Id);
             }
+
+            [Fact]
+            public void GerarCompeticao()
+            {
+                CopaDeFilmes servico = new CopaDeFilmes();
+                var listaDeOitoFilmes = servico.ObterFilmes().GetRange(0, 8);
+                Campeonato campeonato = new Campeonato();
+
+                var resultadoDaCompeticao = campeonato.GerarCampeonato(listaDeOitoFilmes);
+
+                var jogos = campeonato.MontarJogos(4, listaDeOitoFilmes);
+
+                var vencedores = campeonato.RealizarFaseDejogos(jogos);
+
+                var jogosSemiFinal = campeonato.MontarJogos(2, vencedores);
+
+                var vencedoresSemiFinal = campeonato.RealizarFaseDejogos(jogosSemiFinal);
+
+                var resultadoDaCompeticaoSimulado = campeonato.ObterResultadoDaCompeticao(vencedoresSemiFinal);
+
+                Assert.Equal(resultadoDaCompeticaoSimulado.Campeao.Id, resultadoDaCompeticao.Campeao.Id);
+                Assert.Equal(resultadoDaCompeticaoSimulado.ViceCampeao.Id, resultadoDaCompeticao.ViceCampeao.Id);
+            }
+
         }
     }
 }
