@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CopaDoMundoDeFilmes.Core.Dominio.Modelos;
 
-namespace CopaDoMundoDeFilmes.Core.Dominio.Modelos
+namespace CopaDoMundoDeFilmes.Core.Dominio.ObjetosDeValor
 {
     public class Jogo
     {

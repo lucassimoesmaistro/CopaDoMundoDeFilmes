@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CopaDoMundoDeFilmes.Core.Dominio.Modelos
+﻿namespace CopaDoMundoDeFilmes.Core.Dominio.Modelos
 {
     public class Filme
     {

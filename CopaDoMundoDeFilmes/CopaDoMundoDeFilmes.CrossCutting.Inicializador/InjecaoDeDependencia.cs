@@ -1,4 +1,8 @@
 ﻿
+using CopaDoMundoDeFilmes.Core.Dominio.Interfaces;
+using CopaDoMundoDeFilmes.Core.Dominio.Servicos;
+using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Interfaces;
+using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Servicos;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CopaDoMundoDeFilmes.CrossCutting.Inicializador
@@ -6,13 +10,13 @@ namespace CopaDoMundoDeFilmes.CrossCutting.Inicializador
     public class InjecaoDeDependencia
     {
 
-        public static void RegisterServices(IServiceCollection services)
+        public static void RegistrarServicos(IServiceCollection services)
         {
-            // Domain.Service
-            //services.AddScoped<IUserService, UserService>();
+            // Dominio
+            services.AddScoped<ICampeonato, Campeonato>();
 
-            // Application
-            //services.AddScoped<IUserAppService, UserAppService>();
+            // Servicos De Aplicacao
+            services.AddScoped<ICopaDeFilmes, CopaDeFilmes>();
 
         }
     }

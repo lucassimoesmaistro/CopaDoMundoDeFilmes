@@ -1,5 +1,6 @@
 ﻿using CopaDoMundoDeFilmes.Core.Dominio.Interfaces;
 using CopaDoMundoDeFilmes.Core.Dominio.Modelos;
+using CopaDoMundoDeFilmes.Core.Dominio.ObjetosDeValor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
 {
     public class Campeonato : ICampeonato
     {
-        public List<Filme> GerarCampeonato(List<Filme> filmesSelecionados)
+        public ResultadoFinal GerarCampeonato(List<Filme> filmesSelecionados)
         {
-            throw new NotImplementedException();
+            return new ResultadoFinal();
         }
 
         public List<Filme> ObterFilmes()
@@ -19,9 +20,9 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
             throw new NotImplementedException();
         }
 
-        public Filme DefineVencedor(Filme filme1, Filme filme2)
+        public Filme DefinirVencedor(Filme filme1, Filme filme2)
         {
-            return filme1.Nota > filme2.Nota ? filme1 : filme2;
+            return filme1.Nota < filme2.Nota ? filme2 : filme1;
         }
 
         public List<Jogo> MontarJogos(int quantidadeDeJogos, List<Filme> listaDeFilmes)
@@ -33,6 +34,23 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
                 jogos.Add(new Jogo { Numero = jogo, Filme1 = listaOrdenada.ElementAt(jogo), Filme2 = listaOrdenada.ElementAt(listaOrdenada.Count() - 1 - jogo) });
             }
             return jogos;
+        }
+
+        public List<Filme> RealizarFaseDejogos(List<Jogo> jogos)
+        {
+            var vencedores = new List<Filme>();
+            foreach(var jogo in jogos)
+            {
+                vencedores.Add(this.DefinirVencedor(jogo.Filme1, jogo.Filme2));
+            }
+            return vencedores;
+        }
+
+        public ResultadoFinal ObterResultadoDaCompeticao(List<Filme> vencedoresSemiFinal)
+        {
+            var campeao = this.DefinirVencedor(vencedoresSemiFinal[0], vencedoresSemiFinal[1]);
+            var viceCampeao = vencedoresSemiFinal.Where(w => w.Id != campeao.Id).FirstOrDefault();
+            return new ResultadoFinal(){ Campeao = campeao, ViceCampeao = viceCampeao };
         }
     }
 }
