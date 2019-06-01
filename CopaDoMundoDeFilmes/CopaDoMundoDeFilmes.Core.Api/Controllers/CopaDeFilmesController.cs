@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CopaDoMundoDeFilmes.Core.Dominio.Interfaces;
 using CopaDoMundoDeFilmes.Core.Dominio.Modelos;
-using CopaDoMundoDeFilmes.Core.Dominio.ObjetosDeValor;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CopaDoMundoDeFilmes.Core.Api.Controllers
@@ -20,16 +20,27 @@ namespace CopaDoMundoDeFilmes.Core.Api.Controllers
         }
 
         [HttpGet("obterFilmes")]
-        public IEnumerable<Filme> Get(int id)
+        public IEnumerable<Filme> Get()
         {
             return _campeonato.ObterFilmes();
         }
 
-        [HttpPost("gerar")]
-        public ResultadoFinal Post([FromBody] IEnumerable<Filme> filmesSelecionados)
+        // POST: api/CopaDeFilmes
+        [HttpPost]
+        public void Post([FromBody] string value)
         {
-            return _campeonato.GerarCampeonato(filmesSelecionados.ToList());
         }
 
+        // PUT: api/CopaDeFilmes/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
     }
 }

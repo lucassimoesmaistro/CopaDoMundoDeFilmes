@@ -10,6 +10,11 @@ namespace CopaDoMundoDeFilmes.Core.Dominio.Servicos
 {
     public class Campeonato : ICampeonato
     {
+        //private readonly ICopaDeFilmes _servicoCopaDeFilmes;
+        //public Campeonato(ICopaDeFilmes servicoCopaDeFilmes)
+        //{
+        //    _servicoCopaDeFilmes = servicoCopaDeFilmes;
+        //}
         public ResultadoFinal GerarCampeonato(List<Filme> filmesSelecionados)
         {
             return new ResultadoFinal();
