@@ -1,10 +1,16 @@
-<h1>Weather forecast</h1>
+<h3>CAMPEONATO DE FILMES</h3>
 
-<p>This component demonstrates fetching data from the server.</p>
+<h2>Fase de Seleção</h2>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p>Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão Gerar Meu Campeonato para proceguir.</p>
 
-<table class='table table-striped' *ngIf="filmes">
+<p *ngIf="!_filmes"><em>Carregando...</em></p>
+
+<p>Selecionados<br /> <strong>{{ quantidadeDeSelecionados }} de 8 Filmes</strong></p>
+
+<button class="btn btn-primary" (click)="gerarCampeonato()">Gerar Meu Campeonato</button>
+
+<table class='table table-striped' *ngIf="_filmes">
   <thead>
     <tr>
       <th>Selecionado</th>
@@ -14,8 +20,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let filme of filmes">
-      <td> </td>
+    <tr *ngFor="let filme of _filmes">
+      <td>
+        <input type="checkbox"
+               name="filmeSelecionado"
+               value="{{filme.id}}"
+               [(ngModel)]="filme.selecionado"
+               (click)="contador(filme.selecionado)" />
+      </td>
       <td>{{ filme.id }}</td>
       <td>{{ filme.titulo }}</td>
       <td>{{ filme.ano }}</td>

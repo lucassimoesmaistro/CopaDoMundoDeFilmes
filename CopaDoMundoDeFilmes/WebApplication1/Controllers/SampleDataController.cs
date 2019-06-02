@@ -56,6 +56,36 @@ namespace WebApplication1.Controllers
             }
         }
 
+
+        [HttpGet("[action]")]
+        public void GerarCampeonato(IEnumerable<Filme> filmes)
+        {
+            string BaseUrl = @"http://localhost:52858";
+            var selecionados = filmes;
+            //using (HttpClient cliente = new HttpClient())
+            //{
+            //    List<Filme> filmes = new List<Filme>();
+
+            //    cliente.BaseAddress = new Uri(BaseUrl);
+
+            //    //definindo o formato dos dados no request
+            //    MediaTypeWithQualityHeaderValue contentType = new
+            //        MediaTypeWithQualityHeaderValue("application/json");
+
+            //    cliente.DefaultRequestHeaders.Accept.Add(contentType);
+
+            //    HttpResponseMessage response = cliente.GetAsync("/api/CopaDeFilmes/obterFilmes").Result;
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        var retorno = response.Content.ReadAsStringAsync().Result;
+            //        filmes = JsonConvert.DeserializeObject<List<Filme>>(retorno);
+            //    }
+
+            //    return filmes;
+            //}
+        }
+        
+
         public class WeatherForecast
         {
             public string DateFormatted { get; set; }
