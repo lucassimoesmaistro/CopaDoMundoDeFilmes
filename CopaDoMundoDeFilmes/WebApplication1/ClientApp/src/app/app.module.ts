@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { CopaDeFilmesComponent } from './copa-de-filmes/copa-de-filmes.component';
+import { ResultadoComponent  } from './copa-de-filmes/resultado.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CopaDeFilmesComponent } from './copa-de-filmes/copa-de-filmes.component
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CopaDeFilmesComponent
+    CopaDeFilmesComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +32,7 @@ import { CopaDeFilmesComponent } from './copa-de-filmes/copa-de-filmes.component
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'filmes', component: CopaDeFilmesComponent },
+      { path: 'resultado/:campeao/:vice', component: ResultadoComponent },
     ])
   ],
   providers: [],
