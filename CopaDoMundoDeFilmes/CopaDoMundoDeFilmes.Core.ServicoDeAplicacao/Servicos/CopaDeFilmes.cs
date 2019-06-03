@@ -29,7 +29,7 @@ namespace CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Servicos
                 if (response.IsSuccessStatusCode)
                 {
                     var retorno = response.Content.ReadAsStringAsync().Result;
-                    filmes = JsonConvert.SerializeObject<List<Filme>>(retorno);
+                    filmes = JsonConvert.DeserializeObject<List<Filme>>(retorno);
                 }
 
                 return filmes;
