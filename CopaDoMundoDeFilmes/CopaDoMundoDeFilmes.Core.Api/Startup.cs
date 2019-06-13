@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -21,6 +22,19 @@ namespace CopaDoMundoDeFilmes.Core.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowMyOrigin",
+                builder => builder.AllowAnyOrigin());
+            });
+
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowMyOrigin"));
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "APICopaDeFilmes", Version = "v1" });
@@ -45,6 +59,8 @@ namespace CopaDoMundoDeFilmes.Core.Api
             });
 
             app.UseMvc();
+
+            app.UseCors("AllowMyOrigin");
         }
 
         private static void RegistrarServicos(IServiceCollection services)

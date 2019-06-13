@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.CrossCu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaDoMundoDeFilmes.Core.ServicoDeAplicacao", "CopaDoMundoDeFilmes.Core.ServicoDeAplicacao\CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.csproj", "{603E9F36-F4D2-4047-9D27-F0F93038CE0C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6470DA5A-FCA2-46D0-8EEA-AC48DACAC23D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{603E9F36-F4D2-4047-9D27-F0F93038CE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{603E9F36-F4D2-4047-9D27-F0F93038CE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{603E9F36-F4D2-4047-9D27-F0F93038CE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6470DA5A-FCA2-46D0-8EEA-AC48DACAC23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6470DA5A-FCA2-46D0-8EEA-AC48DACAC23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6470DA5A-FCA2-46D0-8EEA-AC48DACAC23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6470DA5A-FCA2-46D0-8EEA-AC48DACAC23D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{1D713E9E-1DB5-4286-A032-332058E95E80} = {E03D509E-CC02-4B78-B391-ABC282CC0F49}
 		{82110F4D-D7F8-42AE-AF42-D44ECAAFEDED} = {61581848-80E9-438F-9F1C-5C0DFEF33B41}
 		{603E9F36-F4D2-4047-9D27-F0F93038CE0C} = {D28F95A1-CEC3-49C5-9B49-05091555F804}
+		{6470DA5A-FCA2-46D0-8EEA-AC48DACAC23D} = {C95ACF1C-74C2-4029-8817-5E113839B4D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71A73F7A-E197-475F-AB6A-56C468B4C72C}
