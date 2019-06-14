@@ -1,5 +1,4 @@
-﻿
-using CopaDoMundoDeFilmes.Core.Dominio.Interfaces;
+﻿using CopaDoMundoDeFilmes.Core.Dominio.Interfaces;
 using CopaDoMundoDeFilmes.Core.Dominio.Servicos;
 using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Interfaces;
 using CopaDoMundoDeFilmes.Core.ServicoDeAplicacao.Servicos;
@@ -7,17 +6,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CopaDoMundoDeFilmes.CrossCutting.Inicializador
 {
-    public class InjecaoDeDependencia
+    public static class InicializadorMiddlewareExtensions
     {
 
-        public static void RegistrarServicos(IServiceCollection services)
+        public static IServiceCollection AddInicializador(this IServiceCollection services)
         {
-            // Dominio
             services.AddScoped<ICampeonato, Campeonato>();
 
             // Servicos De Aplicacao
             services.AddScoped<ICopaDeFilmes, CopaDeFilmes>();
-
+            return services;
         }
     }
 }

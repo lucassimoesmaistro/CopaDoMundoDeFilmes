@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Filme> ObterFilmes()
         {
-            string BaseUrl = @"http://localhost:52858";
+            string BaseUrl = @"http://localhost:53426";
             using (HttpClient cliente = new HttpClient())
             {
                 List<Filme> filmes = new List<Filme>();
@@ -45,7 +45,7 @@ namespace WebApplication1.Controllers
         [HttpPost("[action]")]
         public async Task<ResultadoFinal> GerarCampeonato([FromBody]Filme[] filmes)
         {
-            string BaseUrl = @"http://localhost:52858";
+            string BaseUrl = @"http://localhost:53426";
 
             using (HttpClient cliente = new HttpClient())
             {
